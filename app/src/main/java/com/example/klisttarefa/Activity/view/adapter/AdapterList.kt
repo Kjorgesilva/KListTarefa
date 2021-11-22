@@ -1,4 +1,4 @@
-package com.example.klisttarefa.Activity
+package com.example.klisttarefa.Activity.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.klisttarefa.Activity.repository.model.Registration
 import com.example.klisttarefa.R
 
 
@@ -20,17 +20,17 @@ class AdapterList(val listItem:ArrayList<Registration>, val context : Context): 
     }
 
 
-   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AdapterList.ItemViewHolder {
+   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
        val viewLayoutInfla = LayoutInflater.from(parent.context).inflate(R.layout.adapter_list,parent,false)
        return ItemViewHolder(viewLayoutInfla)    }
 
-    override fun onBindViewHolder(holder: AdapterList.ItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.checkBox.text = listItem[position].check.toString()
         holder.activity.text = listItem[position].activity
         holder.type.text = listItem[position].type
 
         for (item in listItem){
-            if (item.check== true){
+            if (item.check == true){
                 holder.checkBox.isChecked = true
             }else{
                 holder.checkBox.isChecked = false

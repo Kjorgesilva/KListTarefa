@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KListTarefa">
         <activity
-            android:name=".Activity.AdapterList"
+            android:name=".Activity.view.adapter.AdapterList"
             android:exported="false" />
         <activity
-            android:name=".Activity.RegistrationActivity"
+            android:name=".Activity.view.activity.RegistrationActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".Activity.view.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
