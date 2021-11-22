@@ -34,6 +34,7 @@ class RegistrationActivity : AppCompatActivity() {
     suspend fun addRegistro() {
         val registration = Registration(3, "teste", "teste", false)
         registrationRepository.save(registration)
+        //teste
         Log.e("add", "Add Registro: " + registration.toString())
     }
 }
