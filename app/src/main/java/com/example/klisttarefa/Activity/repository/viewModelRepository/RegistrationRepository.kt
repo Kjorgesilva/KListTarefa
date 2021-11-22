@@ -5,9 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.example.klisttarefa.Activity.repository.dao.RegistrationDao
 import com.example.klisttarefa.Activity.repository.model.Registration
 
-
 class RegistrationRepository(private var registrationDao: RegistrationDao): ViewModel(){
-
 
     val registration : LiveData<List<Registration>>
     get()= registrationDao.getAll()
@@ -27,5 +25,4 @@ class RegistrationRepository(private var registrationDao: RegistrationDao): View
     fun getId(newRegistration: Registration){
         registrationDao.getId(newRegistration.id)
     }
-
 }
