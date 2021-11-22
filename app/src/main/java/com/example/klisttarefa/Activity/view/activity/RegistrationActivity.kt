@@ -3,7 +3,6 @@ package com.example.klisttarefa.Activity.view.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import androidx.lifecycle.lifecycleScope
 import com.example.klisttarefa.Activity.repository.model.Registration
 import com.example.klisttarefa.Activity.repository.viewModelRepository.RegistrationRepository
