@@ -25,7 +25,8 @@ class RegistrationRepository(val registrationDao: RegistrationDao){
         registrationDao.getId(newRegistration.id)
     }
 
-    private fun getAll(): LiveData<List<Registration>> {
+    fun getAll(): LiveData<List<Registration>> {
         return registrationDao.getAll()
     }
+
 }
