@@ -21,5 +21,5 @@ interface RegistrationDao {
     fun getAll(): LiveData<List<Registration>>
 
     @Query("Select * from tab_registration where id = :key ")
-    fun getId (key:Int):Registration
+    fun getId(key: Int): Registration
 }
