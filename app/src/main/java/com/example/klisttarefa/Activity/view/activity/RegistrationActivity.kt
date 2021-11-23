@@ -37,9 +37,7 @@ class RegistrationActivity : AppCompatActivity() {
 
     suspend fun addRegistro() {
         try {
-            if (!binding.edtActivity.text.toString().isEmpty() && !binding.edtType.text.toString()
-                    .isEmpty()
-            ) {
+            if (!binding.edtActivity.text.toString().isEmpty() && !binding.edtType.text.toString().isEmpty()) {
                 var registration = Registration(
                     activity = binding.edtActivity.text.toString(),
                     type = binding.edtType.text.toString(),

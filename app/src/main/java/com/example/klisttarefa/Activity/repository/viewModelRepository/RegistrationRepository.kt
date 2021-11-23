@@ -1,11 +1,10 @@
 package com.example.klisttarefa.Activity.repository.viewModelRepository
 
-import android.widget.ListView
 import androidx.lifecycle.LiveData
 import com.example.klisttarefa.Activity.repository.dao.RegistrationDao
 import com.example.klisttarefa.Activity.repository.model.Registration
 
-data class RegistrationRepository(val registrationDao: RegistrationDao){
+class RegistrationRepository(val registrationDao: RegistrationDao){
 
     val registration : LiveData<List<Registration>>
     get()= registrationDao.getAll()
@@ -26,7 +25,7 @@ data class RegistrationRepository(val registrationDao: RegistrationDao){
         registrationDao.getId(newRegistration.id)
     }
 
-    fun getAll() {
-        registrationDao.getAll()
+    private fun getAll(): LiveData<List<Registration>> {
+        return registrationDao.getAll()
     }
 }
