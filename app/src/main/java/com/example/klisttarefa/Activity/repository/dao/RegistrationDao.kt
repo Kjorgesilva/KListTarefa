@@ -18,7 +18,7 @@ interface RegistrationDao {
     suspend fun update(registration: Registration)
 
     @Query("Select * from tab_registration")
-    fun getAll(): LiveData<List<Registration>>
+    suspend fun getAllProjet(): List<Registration>
 
     @Query("Select * from tab_registration where id = :key ")
     fun getId(key: Int): Registration

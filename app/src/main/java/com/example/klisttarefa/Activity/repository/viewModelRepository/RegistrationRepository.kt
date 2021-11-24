@@ -6,9 +6,6 @@ import com.example.klisttarefa.Activity.repository.model.Registration
 
 class RegistrationRepository(val registrationDao: RegistrationDao){
 
-    val registration : LiveData<List<Registration>>
-    get()= registrationDao.getAll()
-
     suspend fun save(newRegistration: Registration){
         registrationDao.insert(newRegistration)
     }
@@ -25,8 +22,8 @@ class RegistrationRepository(val registrationDao: RegistrationDao){
         registrationDao.getId(newRegistration.id)
     }
 
-    fun getAll(): LiveData<List<Registration>> {
-        return registrationDao.getAll()
+    suspend fun getAllProjet(): List<Registration> {
+        return registrationDao.getAllProjet()
     }
 
 }
