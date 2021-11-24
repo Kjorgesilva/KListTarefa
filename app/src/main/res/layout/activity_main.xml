@@ -7,7 +7,7 @@
     tools:context=".Activity.view.activity.RegistrationActivity">
 
     <TextView
-        android:id="@+id/txt_label_Incomplete"
+        android:id="@+id/txt_label_incomplete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Incomplete"
@@ -20,18 +20,18 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_Incomplete"
+        android:id="@+id/rv_incomplete"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/txt_label_Completed"
+        app:layout_constraintBottom_toTopOf="@+id/txt_label_completed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_label_Incomplete"
+        app:layout_constraintTop_toBottomOf="@+id/txt_label_incomplete"
         app:layout_constraintVertical_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <TextView
-        android:id="@+id/txt_label_Completed"
+        android:id="@+id/txt_label_completed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Completed"
@@ -45,13 +45,13 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_Completed"
+        android:id="@+id/rv_completed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_label_Completed"
+        app:layout_constraintTop_toBottomOf="@+id/txt_label_completed"
         app:layout_constraintVertical_bias="0.0">
 
     </androidx.recyclerview.widget.RecyclerView>
@@ -59,7 +59,7 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:clickable="true"

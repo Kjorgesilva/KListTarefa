@@ -10,9 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.klisttarefa.Activity.repository.dataBase.RegistrationDataBase
 import com.example.klisttarefa.Activity.view.adapter.AdapterList
 import com.example.klisttarefa.Activity.repository.model.Registration
-import com.example.klisttarefa.Activity.repository.viewModelRepository.RegistrationRepository
+import com.example.klisttarefa.Activity.repository.repository.RegistrationRepository
 import com.example.klisttarefa.databinding.ActivityMainBinding
-import com.example.klisttarefa.databinding.ActivityRegistrationBinding
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -23,21 +22,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var registrationRepository: RegistrationRepository
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val view = binding.root
-        setContentView(view)
-
+        setContentView(binding.root)
 
         registration = ArrayList()
         registrationTrue = ArrayList()
         registrationFalse = ArrayList()
 
         registrationRepository = RegistrationRepository(RegistrationDataBase.getInstance(this).registrationDao)
-
 
       lifecycleScope.launch { listActivity() }
 
@@ -50,15 +44,14 @@ class MainActivity : AppCompatActivity() {
 
     suspend fun listActivity(){
         try {
-            registrationRepository.getAllProjet().forEach {
-                if (it.check == true) {
-                    val layout = LinearLayoutManager(this)
+            registrationRepository.getAllRegistrations().forEach {
+                val layout = LinearLayoutManager(this)
+                if (it.check) {
                     binding.rvCompleted.layoutManager = layout
                     registrationTrue.add(it)
                     adapter = AdapterList(registrationTrue, this)
                     binding.rvCompleted.adapter = adapter
                 } else {
-                    val layout = LinearLayoutManager(this)
                     binding.rvIncomplete.layoutManager = layout
                     registrationFalse.add(it)
                     adapter = AdapterList(registrationFalse, this)

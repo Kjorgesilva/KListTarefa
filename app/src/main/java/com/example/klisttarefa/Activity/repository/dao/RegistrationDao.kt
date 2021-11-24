@@ -1,12 +1,13 @@
 package com.example.klisttarefa.Activity.repository.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.klisttarefa.Activity.constants.Constants
 import com.example.klisttarefa.Activity.repository.model.Registration
 
 
 @Dao
 interface RegistrationDao {
+
 
     @Insert
     suspend fun insert(registration: Registration)
@@ -17,9 +18,9 @@ interface RegistrationDao {
     @Update
     suspend fun update(registration: Registration)
 
-    @Query("Select * from tab_registration")
+    @Query(Constants.QUERY_REGISTRATION)
     suspend fun getAllProjet(): List<Registration>
 
-    @Query("Select * from tab_registration where id = :key ")
+    @Query(Constants.QUERY_REGISTRATION_ID)
     fun getId(key: Int): Registration
 }
