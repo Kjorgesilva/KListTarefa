@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(binding.root)
 
         registration = ArrayList()
@@ -39,9 +38,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, RegistrationActivity::class.java).apply {}
             startActivity(intent)
         }
-
     }
-
     suspend fun listActivity(){
         try {
             registrationRepository.getAllRegistrations().forEach {
@@ -62,5 +59,4 @@ class MainActivity : AppCompatActivity() {
             Log.e("t", "valor null" + e)
         }
     }
-
 }

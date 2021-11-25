@@ -20,7 +20,6 @@ class RegistrationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
-
         setContentView(binding.root)
 
         registrationRepository = RegistrationRepository(RegistrationDataBase.getInstance(this).registrationDao)
@@ -29,12 +28,9 @@ class RegistrationActivity : AppCompatActivity() {
             lifecycleScope.launch { addRegistry() }
         }
     }
-
     suspend fun addRegistry() {
         try {
-            if (binding.edtActivity.text.toString().isNotEmpty() && binding.edtType.text.toString()
-                    .isNotEmpty()
-            ) {
+            if (binding.edtActivity.text.isNotEmpty() && binding.edtType.text.isNotEmpty()) {
                 val registration = Registration(
                     activity = binding.edtActivity.text.toString(),
                     type = binding.edtType.text.toString(),
@@ -46,7 +42,6 @@ class RegistrationActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_LONG).show()
             }
-
         } catch (e: Exception) {
             Log.e("Erro", "Mensagem: " + e)
         }

@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.klisttarefa.Activity.repository.model.Registration
 import com.example.klisttarefa.R
 
-
 class AdapterList(val listItem:ArrayList<Registration>, val context : Context): RecyclerView.Adapter<AdapterList.ItemViewHolder>(){
 
     inner class ItemViewHolder(view: View): RecyclerView.ViewHolder(view){
@@ -18,7 +17,6 @@ class AdapterList(val listItem:ArrayList<Registration>, val context : Context): 
         val activity = view.findViewById(R.id.tx_activity) as TextView
         val type = view.findViewById(R.id.tx_type) as TextView
     }
-
 
    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
        val viewLayoutInfla = LayoutInflater.from(parent.context).inflate(R.layout.adapter_list,parent,false)
@@ -36,13 +34,10 @@ class AdapterList(val listItem:ArrayList<Registration>, val context : Context): 
                 holder.checkBox.isChecked = false
             }
             holder.checkBox.text = ""
-
         }
-
     }
 
     override fun getItemCount(): Int = listItem.size
-
 }
 
 
