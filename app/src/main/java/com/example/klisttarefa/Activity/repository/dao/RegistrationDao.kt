@@ -8,7 +8,6 @@ interface RegistrationDao {
     companion object {
         const val QUERY_REGISTRATION  = "Select * from tab_registration"
         const val QUERY_REGISTRATION_ID = "Select * from tab_registration where id = :key "
-
     }
     @Insert
     suspend fun insert(registration: Registration)

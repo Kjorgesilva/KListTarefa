@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        //add linha teste
+
         registration = ArrayList()
         registrationTrue = ArrayList()
         registrationFalse = ArrayList()
