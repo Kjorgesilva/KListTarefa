@@ -18,4 +18,5 @@ data class Registration(
 
     @ColumnInfo(name = "check")
     var check: Boolean
+    //comentario teste
 )
