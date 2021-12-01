@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class RegistrationActivity : AppCompatActivity() {
 
-    lateinit var registrationRepository: RegistrationRepository
+    lateinit var viewModel: RegistrationViewModel
     private val binding by lazy { ActivityRegistrationBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,12 +22,14 @@ class RegistrationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_registration)
         setContentView(binding.root)
 
-        registrationRepository = RegistrationRepository(RegistrationDataBase.getInstance(this).registrationDao)
+        viewModel = RegistrationViewModel()
+        viewModel.initViewModel(this)
 
         binding.btnSalvar.setOnClickListener {
             lifecycleScope.launch { addRegistry() }
         }
     }
+
     suspend fun addRegistry() {
         try {
             if (binding.edtActivity.text.isNotEmpty() && binding.edtType.text.isNotEmpty()) {
@@ -36,8 +38,8 @@ class RegistrationActivity : AppCompatActivity() {
                     type = binding.edtType.text.toString(),
                     check = false
                 )
-                registrationRepository.save(registration)
-                Log.e("add", "Add Registro: " + registration.toString())
+
+                viewModel.addRegistry(registration)
                 finish()
             } else {
                 Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_LONG).show()
