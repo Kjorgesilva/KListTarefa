@@ -1,4 +1,4 @@
-package com.example.klisttarefa.Activity.view.activity
+package com.example.klisttarefa.Activity.ui.registration
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -11,6 +11,7 @@ import com.example.klisttarefa.Activity.repository.dataBase.RegistrationDataBase
 import com.example.klisttarefa.Activity.view.adapter.AdapterList
 import com.example.klisttarefa.Activity.repository.model.Registration
 import com.example.klisttarefa.Activity.repository.repository.RegistrationRepository
+import com.example.klisttarefa.Activity.ui.registration.RegistrationActivity
 import com.example.klisttarefa.databinding.ActivityMainBinding
 import kotlinx.coroutines.launch
 
