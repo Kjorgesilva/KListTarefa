@@ -13,7 +13,7 @@
             android:name=".Activity.view.adapter.AdapterList"
             android:exported="false" />
         <activity
-            android:name=".Activity.view.activity.RegistrationActivity"
+            android:name=".Activity.ui.registration.RegistrationActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.view.activity.MainActivity"
